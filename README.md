@@ -1,7 +1,7 @@
 # Data Logger for Arduino
 
-Easy to use set of programs that saves data from an Arduino to a spreadsheet.
-The programs are written using Processing and the Arduino IDE and records serial data sent from an Arduino to a PC in a comma separated values file (.csv) which can then be opened using a spreadsheet editor such as Excel Spreadsheets or WPS Spreadsheets.
+Easy to use set of programs that saves data from an Arduino to a spreadsheet. **Only uses Serial.print();**
+The programs are written using Processing and the Arduino IDE, meaning they are cross platform compatible(Windows, Mac, & Linux), and records serial data sent from an Arduino to a PC in a comma separated values file (.csv) which can then be opened using a spreadsheet editor such as Excel Spreadsheets or WPS Spreadsheets.
 
 ## Getting Started
 
@@ -20,7 +20,8 @@ Modify the Data_Logger_Arduino file to add in sensors to collect data where indi
 When running Arduino sketch for the first time, the first couple lines from the Arduino will be garbage but they will be sent after the initiation marker so processing will put them into the csv file. To avoid this, run the Processing sketch for a couple seconds, stop it, then run it again, this time it should work perfectly. Note, this only has to be done the first time you run the Processing sketch directly after you upload a new sketch to the Arduino.
 
 ## Screenshots
-![picture](https://github.com/JSchiltz19/Arduino-Data-Logger/blob/master/Spreadsheet_capture.png)
+![picture](https://github.com/JSchiltz19/Arduino-Data-Logger/blob/master/Screenshots/Arduino_Capture.png)
+![picture](https://github.com/JSchiltz19/Arduino-Data-Logger/blob/master/Screenshots/Spreadsheet_Capture.png)
 
 ## Built With
 
