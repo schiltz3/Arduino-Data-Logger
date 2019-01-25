@@ -19,8 +19,7 @@ boolean receiveInProgress = false;
 boolean overflow = false;
 boolean initialize = false;
 
-//setup COM port (look up in the arduino IDE Tools>Port)
-String COM="COM3";
+String COM="COM6";               //setup COM port (look up in the arduino IDE Tools>Port)
 
 //initialize, start, and end markers.
 char startMarker = '<';
@@ -28,23 +27,24 @@ char endMarker = '>';
 char initializeMarker = '^';
 
 //Document setup
-String filename = "IMU_Data";
-String columns = "Column1,Column2,Column3,Column4,Column5";
+String filename = "Datta_Logger";
+String columns = "Column1,Column2,Column3,Column4,LoopTime";
 
 //Sampling setup
-int maxTime = 100000;                                    //maximum amount of time you want the program to run for
-int samples = 1000;                                      //number of data samples you want
-int maxChars = 29;                                       //set to one higher than the most characters transmitted
-boolean debug = true;                                    //set to true to see more debugging information
+int maxTime = 2*30*1000;                                 //maximum amount of time you want the program to run for
+int samples = 1000;                                      //maximum number of data samples you want
+int maxChars = 56;                                       //set to one higher than the most characters transmitted
+boolean debug = false;                                   //set to true to see more debugging information
 
 
 void setup() {
   min = minute();
-  output = createWriter(filename + str(min)+ ".csv");    // creats a file and saves it in the sketch folder
+  int sec = second();
+  output = createWriter(filename + str(min)+str(sec)+ ".csv");    // creats a file and saves it in the sketch folder
+  ArduinoSerial = new Serial(this, COM, 115200);         //sets serial to listen on COM port 4 at 115200 baud
   output.println(columns);
   updateTime();                                          //updates time
   timeOffset = (((min*60) + s)*1000) +m;                 //sets a zero for the time
-  ArduinoSerial = new Serial(this, COM, 115200);         //sets serial to listen on COM port 4 at 115200 baud
   println("setup Complete");
 }
 
@@ -53,7 +53,7 @@ void draw() {
     updateTime();
     receiveWithStartEndMarkers();                        //recieves transmition from Arduino
     if (newData == true) {                               //checks to see if a transmition is complete. This function loops may more times than the arduino sends data
-      println("latest transmition:", row);
+      println("Latest transmition:", row);
       newData = false;                                   //sets to false to begin looking for new data
     }
     time = ((((min*60) + s)*1000) +m) - timeOffset;
@@ -112,7 +112,7 @@ void receiveWithStartEndMarkers() {
       }
     } else {
       if (debug) {
-        println("incomingString = null");
+        println("Incoming String = null");
       }
     }
   }
@@ -122,11 +122,13 @@ void receiveWithStartEndMarkers() {
 void keyPressed() {
   output.flush();                     // Writes the remaining data to the file
   output.close();                     // Finishes the file
+  println("End of transmitions");
   if (debug) {
     println("Number of loops:", loop);
-    println("number of writes:", fileWtites);
-    println( "Total program run time:", time, "ms");
-    println("Longest transmition:", maxCharacters, "characters  (Set maxCharacters to", maxCharacters+1, "to guard against overflows)");
+    println("Number of writes:", fileWtites);
+    println("Total program run time:", time, "ms");
+    println("Longest transmition:", maxCharacters, "characters");
+    println("Set maxCharacters to", maxCharacters+1, "to guard against overflows. Currently set at", maxChars);
   }
   exit();                            // Stops the program
 }
