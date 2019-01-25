@@ -2,10 +2,10 @@
 unsigned long currentMillis = 0;
 unsigned long previousMillis = 0;
 
-int Column1 = 1;
-int Column2 = 2;
-int Column3 = 3;
-int Column4 = 4;
+byte Column1 = 1;
+byte Column2 = 2;
+byte Column3 = 3;
+byte Column4 = 4;
 float deltaT = 0;
 
 char startMarker = '<';
@@ -14,12 +14,10 @@ char initializeMarker = '^';
 
 
 void setup() {
-  while (!Serial);
   Serial.begin(115200);
+  while (!Serial);
   Serial.print(initializeMarker);   //inializes the entire transmition
-  delay(1000);
   previousMillis = millis();
-
 }
 
 void loop() {
