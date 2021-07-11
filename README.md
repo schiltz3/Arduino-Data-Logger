@@ -1,7 +1,26 @@
-# Data Logger for Arduino
+# Note:
+While the folowing method works, you will have much more sucess installing ![RealTerm](https://sourceforge.net/projects/realterm/) to monitor and log the serial terminal
+Then saving the log to open in either your text editor, excel, or in this ![CSV Plotter](https://github.com/schiltz3/csv-plotter)
+### Arduino
+The Arduino code will look something like this to print each row data.
+```C
+void serialOutput(){
+  Serial.print(Column1);
+  Serial.print(',');
+  Serial.print(Column2);
+  Serial.print(',');
+  Serial.print(Column3);
+  Serial.print(',');
+  Serial.print(Column4);
+}
+```
 
-Easy to use set of programs that saves data from an Arduino to a spreadsheet. **Only uses Serial.print();**
-The programs are written using Processing and the Arduino IDE, meaning they are cross platform compatible(Windows, Mac, & Linux), and records serial data sent from an Arduino to a PC in a comma separated values file (.csv) which can then be opened using a spreadsheet editor such as Excel Spreadsheets or WPS Spreadsheets.
+### Another alternative is to follow ![this](https://miscircuitos.com/plot-real-time-signal-coming-arduino/) guide
+
+# ~~Data Logger for Arduino~~
+
+~~Easy to use set of programs that saves data from an Arduino to a spreadsheet. **Only uses Serial.print();**
+The programs are written using Processing and the Arduino IDE, meaning they are cross platform compatible(Windows, Mac, & Linux), and records serial data sent from an Arduino to a PC in a comma separated values file (.csv) which can then be opened using a spreadsheet editor such as Excel Spreadsheets or WPS Spreadsheets.~~
 
 ## Getting Started
 
