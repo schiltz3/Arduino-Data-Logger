@@ -46,23 +46,3 @@ When running Arduino sketch for the first time, the first couple lines from the 
 
 * [Processing](https://processing.org/) - Used to receive the data on the computer side.
 * [Arduino IDE](https://www.arduino.cc/en/main/software/) - Used to format and send data to the computer.
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://github.com/JSchiltz19/Arduino-Data-Logger/blob/master/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
-
-
-## Authors
-
-* **John Schiltz**  - [JSchiltz19](https://github.com/JSchiltz19)
-
-
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-Big thank you to Robin2 who's program I used as a the beginning framework for my work from his post in the Arduino forum [Serial Input Basics contd](https://forum.arduino.cc/index.php?topic=288234.msg2016582#msg2016582).
-
