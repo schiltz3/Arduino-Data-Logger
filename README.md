@@ -1,3 +1,5 @@
+<meta name="google-site-verification" content="Z8b6tIzxZ-ctBU-V8mwvydPi13jr7YfnqSzCjFromqY" />
+
 # Note:
 While the folowing method works, you will have much more sucess installing [RealTerm](https://sourceforge.net/projects/realterm/) to monitor and log the serial terminal
 Then saving the log to open in either your text editor, excel, or in this [CSV Plotter](https://github.com/schiltz3/csv-plotter)
