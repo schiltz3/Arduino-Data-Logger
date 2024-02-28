@@ -4,7 +4,7 @@
 While the folowing method works, you will have much more sucess installing [RealTerm](https://sourceforge.net/projects/realterm/) to monitor and log the serial terminal
 Then saving the log to open in either your text editor, excel, or in this [CSV Plotter](https://github.com/schiltz3/csv-plotter)
 
-### If you're looking for a way to see which COM ports are available on your computer, [try COM Info](https://github.com/schiltz3/ComInfo)
+#### If you're looking for a way to see which COM ports are available on your computer, try [COM Info](https://github.com/schiltz3/ComInfo)
 
 ### Arduino
 The Arduino code will look something like this to print each row data.
