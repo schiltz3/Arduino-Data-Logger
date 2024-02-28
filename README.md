@@ -22,10 +22,10 @@ void serialOutput(){
 
 ### Another alternative is to follow [this](https://miscircuitos.com/plot-real-time-signal-coming-arduino/) guide
 
-# ~~Data Logger for Arduino~~
+# Data Logger for Arduino
 
-~~Easy to use set of programs that saves data from an Arduino to a spreadsheet. **Only uses Serial.print();**
-The programs are written using Processing and the Arduino IDE, meaning they are cross platform compatible(Windows, Mac, & Linux), and records serial data sent from an Arduino to a PC in a comma separated values file (.csv) which can then be opened using a spreadsheet editor such as Excel Spreadsheets or WPS Spreadsheets.~~
+Easy to use set of programs that saves data from an Arduino to a spreadsheet. **Only uses Serial.print();**
+The programs are written using Processing and the Arduino IDE, meaning they are cross platform compatible(Windows, Mac, & Linux), and records serial data sent from an Arduino to a PC in a comma separated values file (.csv) which can then be opened using a spreadsheet editor such as Excel Spreadsheets or WPS Spreadsheets.
 
 ## Getting Started
 
@@ -39,6 +39,7 @@ You will need the Arduino IDE and Processing to run the two programs. Links to w
 Simply download and unzip the folder, and you are ready to go. Upload the Data_Logger_Arduino to your Arduino before you run the Processing code.
 
 Modify the Data_Logger_Arduino file to add in sensors to collect data where indicated in the program.
+Use [COM Info](https://github.com/schiltz3/ComInfo) to figure out which COM port to use.
 
 ## Bugs
 When running Arduino sketch for the first time, the first couple lines from the Arduino will be garbage but they will be sent after the initiation marker so processing will put them into the csv file. To avoid this, run the Processing sketch for a couple seconds, stop it, then run it again, this time it should work perfectly. Note, this only has to be done the first time you run the Processing sketch directly after you upload a new sketch to the Arduino.
